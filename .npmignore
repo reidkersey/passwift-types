@@ -1,0 +1,12 @@
+node_modules
+.eslintrc.json
+.gitIgnore
+jestconfig.json
+TODO
+src
+tsconfig.eslint.json
+tsconfig.json
+webpack.config.js
+*.tgz
+# lib/**/*.js
+.vscode

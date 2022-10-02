@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "lib", // where to put the compiled JS files
+    "target": "ES5", // which level of JS support to target
+    "module": "ES2020", // which system for the program AMD, UMD, System, CommonJS
+
+    // Recommended: Compiler complains about expressions implicitly typed as 'any'
+    "noImplicitAny": true, 
+    "allowJs": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+  },
+  "include": ["src"], // which files to compile
+  "exclude": ["node_modules", "**/__tests__"] // which files to skip
+}

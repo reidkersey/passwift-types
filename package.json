@@ -1,0 +1,54 @@
+{
+  "name": "passwift-types",
+  "version": "0.1.0",
+  "description": "A package containing types common between various Passwift Packages",
+  "main": "lib/bundle.js",
+  "source": "src/index.ts",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
+    "build": "tsc",
+    "local": "rm -rf lib passwift-types-0.1.0.tgz && tsc && webpack && npm pack",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reidkersey/passwift-types.git"
+  },
+  "keywords": [
+    "types",
+    "passwift"
+  ],
+  "author": "Passwift",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reidkersey/passwift-types/issues"
+  },
+  "homepage": "https://github.com/reidkersey/passwift-types#readme",
+  "devDependencies": {
+    "@types/estree": "^0.0.47",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.4.7",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.2",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+  }
+}
