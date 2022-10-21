@@ -8,7 +8,13 @@ export interface PasswiftScopeGroup {
   scopes: string[];
 }
 
-type PasswordCategory = "Number" | "Uppercase" | "Lowercase" | "Special";
+export const _PasswordCategoryOptions = [
+  "Number",
+  "Uppercase",
+  "Lowercase",
+  "Special",
+] as const;
+export declare type PasswordCategory = typeof _PasswordCategoryOptions;
 
 export interface PrivatePasswiftConfig extends PublicPasswiftConfig {
   privateAPIKey: string;
