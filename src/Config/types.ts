@@ -14,8 +14,7 @@ export const _PasswordCategoryOptions = [
   "Lowercase",
   "Special",
 ] as const;
-export declare type PasswordCategory = typeof _PasswordCategoryOptions;
-
+export type PasswordCategory = typeof _PasswordCategoryOptions[number];
 export interface PrivatePasswiftConfig extends PublicPasswiftConfig {
   privateAPIKey: string;
 }

@@ -1,4 +1,5 @@
 const path = require('path');
+const keysTransformer = require('ts-transformer-keys/transformer').default;
 
 module.exports = {
   entry: './src/index.ts',
@@ -7,8 +8,16 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: 'ts-loader',
         exclude: /node_modules/,
+        options: {
+          // make sure not to set `transpileOnly: true` here, otherwise it will not work
+          getCustomTransformers: program => ({
+              before: [
+                  keysTransformer(program)
+              ]
+          })
+        }
       }
     ],
   },
