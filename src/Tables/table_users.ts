@@ -1,5 +1,3 @@
-import { keys } from "ts-transformer-keys";
-
 export interface table_users {
   createdAt: number;
   userId: string;
@@ -10,17 +8,13 @@ export interface table_users {
   unprotectedUserData?: any;
   authProviderData?: AuthProviderData;
   metadata: UserMetadata;
-  disabled: boolean;
-  scopes: string[];
 }
 
-export interface UserMetadata {
+export interface UserMetadata extends OAuth2StandardClaims {
   userIdentifier: string;
   lastLogin?: number;
-  locale?: string;
-  profileImage?: string;
-  email?: string;
-  email_verified?: boolean;
+  disabled: boolean;
+  scopes: string[];
 }
 
 export interface Logins {
