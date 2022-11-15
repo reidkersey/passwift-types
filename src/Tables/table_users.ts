@@ -10,7 +10,7 @@ export interface table_users {
   metadata: UserMetadata;
 }
 
-export interface UserMetadata extends OAuth2StandardClaims {
+export interface UserMetadata extends Partial<OAuth2StandardClaims> {
   userIdentifier: string;
   lastLogin?: number;
   disabled: boolean;
