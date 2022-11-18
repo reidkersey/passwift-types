@@ -8,6 +8,7 @@ export interface table_users {
   unprotectedUserData?: any;
   authProviderData?: AuthProviderData;
   metadata: UserMetadata;
+  disabled: boolean;
 }
 
 export interface UserMetadata extends Partial<OAuth2StandardClaims> {
